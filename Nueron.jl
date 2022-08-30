@@ -1,5 +1,6 @@
 using StatsFuns;
 using Distributions;
+#Code does stuff
 function newtonTrain()
 
     w1 = [0.1;0.1];
