@@ -32,7 +32,7 @@ function newtonTrain()
         cost = 0.5*((expected-calculated)^2);
         push!(bcosts,cost);
     end
-
+    costs = [];
     n = size(data,1);
     while(n > 0)
         input = reshape(data[n,1:2],(1,2))
@@ -47,7 +47,7 @@ function newtonTrain()
         sigPrimez2 = logisticPrime.(z2)[1]
         w1Adjust = dc*sigPrimez2*(input)'
         b1Adjust = dc*sigPrimez2
-
+        push!(costs,cost);
         
 
         w1 = w1 .+ w1Adjust
